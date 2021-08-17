@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Loader from '../Loader';
+import '../../App.css';
 const Detail = ({ match }) => {
   const getProduct = async () => {
     const res = await fetch(
@@ -26,14 +27,14 @@ const Detail = ({ match }) => {
       {loader ? (
         <Loader />
       ) : (
-        <>
+        <div className='container-fortnite'>
           <h1>{item.name}</h1>
           <img
             style={{ background: 'black' }}
             src={item.images.information}
             alt=''
           />
-        </>
+        </div>
       )}
     </div>
   );

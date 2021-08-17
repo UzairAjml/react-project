@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Loader from '../Loader';
+import '../../App.css';
 const Fortnite = () => {
   const [item, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -25,13 +26,13 @@ const Fortnite = () => {
       {loading ? (
         <Loader />
       ) : (
-        <>
+        <div className='container-fortnite'>
           {item.map((items, key) => (
             <h1 key={key}>
               <Link to={`/Fortnite/${items.itemId}`}>{items.item.name}</Link>
             </h1>
           ))}
-        </>
+        </div>
       )}
     </div>
   );

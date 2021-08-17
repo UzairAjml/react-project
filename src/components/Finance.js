@@ -3,10 +3,11 @@ import AccStatus from './Finance/AccStatus';
 import Auth from './Finance/Auth';
 import Balance from './Finance/Balance';
 import Banking from './Finance/Banking';
+import '../App.css';
 
 const Finance = () => {
   return (
-    <div>
+    <div id='finance'>
       <Auth />
       <Balance />
       <Banking />
