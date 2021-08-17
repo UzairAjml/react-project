@@ -1,0 +1,21 @@
+.cards {
+  margin-top: 7rem;
+  margin-left: 4.5rem;
+}
+.nav {
+  position: sticky;
+}
+
+.container-react {
+  background-color: rgb(230, 236, 236);
+  text-align: left;
+}
+#heading-react {
+  text-align: center;
+}
+
+.btn-react {
+  margin-top: 1.5rem;
+  margin-left: 0.3rem;
+  width: 6rem;
+}
