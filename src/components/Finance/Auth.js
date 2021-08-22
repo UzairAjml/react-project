@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { login } from '../../actions/bankingActions';
+import { Button } from 'react-bootstrap';
 
 const Auth = () => {
   const dispatch = useDispatch();
@@ -13,9 +14,9 @@ const Auth = () => {
   const loginType = useSelector((state) => state.auth.islogin);
   return (
     <div>
-      <button className='btn btn-primary' onClick={handleLogin}>
+      <Button variant='primary' onClick={handleLogin}>
         {loginType ? 'login' : 'logout'}{' '}
-      </button>
+      </Button>
     </div>
   );
 };

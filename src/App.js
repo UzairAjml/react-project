@@ -1,28 +1,32 @@
 import './App.css';
-import MainDashboard from './components/MainDashboard';
+import MainDashboard from './components/screens/MainDashboard';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Header from './components/Header';
-import Finance from './components/Finance';
-import ReactSearch from './components/ReactSearch';
+import Header from './components/screens/Header';
+import Finance from './components/screens/Finance';
+import ReactSearch from './components/screens/ReactSearch';
 import FortniteComp from './components/Fortnite/FortniteComp';
-import Fortnite from './components/Fortnite/Fortnite';
-import Customer from './components/Customer';
-import About from './components/About';
-import Footer from './components/Footer';
+import Customer from './components/screens/Customer';
+import About from './components/screens/About';
+import Footer from './components/screens/Footer';
+import ErrorPage from './components/screens/ErrorPage';
+import { Container } from 'react-bootstrap';
 
 function App() {
   return (
     <div className='App'>
       <Header />
       <Router>
-        <Switch>
-          <Route path='/' component={MainDashboard} exact />
-          <Route path='/Support' component={Customer} exact />
-          <Route path='/finance' component={Finance} />
-          <Route path='/React' component={ReactSearch} />
-          <Route path='/Fortnite' component={FortniteComp} />
-          <Route path='/About' component={About} />
-        </Switch>
+        <Container>
+          <Switch>
+            <Route path='/' component={MainDashboard} exact />
+            <Route path='/Support' component={Customer} />
+            <Route path='/finance' component={Finance} />
+            <Route path='/React' component={ReactSearch} />
+            <Route path='/Fortnite' component={FortniteComp} />
+            <Route path='/About' component={About} />
+            <Route component={ErrorPage} />
+          </Switch>
+        </Container>
       </Router>
       <Footer />
     </div>

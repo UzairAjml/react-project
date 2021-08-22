@@ -10,6 +10,8 @@ const Loader = () => {
         height: '100px',
         margin: 'auto',
         display: 'block',
+        marginTop: '9rem',
+        color: 'skyblue',
       }}
     ></Spinner>
   );

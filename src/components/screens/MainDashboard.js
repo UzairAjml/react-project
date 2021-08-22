@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
-import '../App.css';
+import '../../App.css';
 import { Link } from 'react-router-dom';
 const MainDashboard = () => {
   return (

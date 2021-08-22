@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
-import '../App.css';
+import '../../App.css';
 import Loader from './Loader';
 
 const ReactSearch = () => {
@@ -38,7 +38,7 @@ const ReactSearch = () => {
   };
 
   return (
-    <div className='container '>
+    <div className='container' id='backGround'>
       <h1 id='heading-react'>React Hooks</h1>
 
       {loading ? (
@@ -83,7 +83,9 @@ const ReactSearch = () => {
               );
             })}
           </ul>
-          <h1>{err && err.message}</h1>
+          <h1 style={{ alignItems: 'center', color: 'red' }}>
+            {err && 'Check Your Internet Connection '}
+          </h1>
         </>
       )}
     </div>

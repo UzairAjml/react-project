@@ -7,6 +7,7 @@ import {
   withdraw,
   accType,
 } from '../../actions/bankingActions';
+import { Button, Form } from 'react-bootstrap';
 
 const Banking = () => {
   const dispatch = useDispatch();
@@ -36,31 +37,34 @@ const Banking = () => {
 
   return (
     <div>
-      <form className='form-group'>
-        <input
-          type='number'
-          className='form-control'
-          value={ammount}
-          onChange={(e) => {
-            setAmmount(e.target.value);
-          }}
-        ></input>
-        <button className='btn btn-primary' onClick={handleDeposite}>
+      <Form>
+        <Form.Group className='mb-3'>
+          <Form.Control
+            type='text'
+            value={ammount}
+            onChange={(e) => {
+              setAmmount(e.target.value);
+            }}
+            placeholder='Resut will Appear here'
+          />
+        </Form.Group>
+
+        <Button variant='primary' onClick={handleDeposite}>
           Deposit
-        </button>
-        <button className='btn btn-success' onClick={handleWidraw}>
+        </Button>
+        <Button variant='success' onClick={handleWidraw}>
           Withdraw
-        </button>
-        <button className='btn btn-secondary' onClick={handleInterest}>
+        </Button>
+        <Button variant='secondary' onClick={handleInterest}>
           Collect Interest
-        </button>
-        <button className='btn btn-danger' onClick={handleDelete}>
+        </Button>
+        <Button variant='danger' onClick={handleDelete}>
           Delete Account
-        </button>
-        <button className='btn btn-warning' onClick={handleType}>
+        </Button>
+        <Button variant='warning' onClick={handleType}>
           Change Acccount Type
-        </button>
-      </form>
+        </Button>
+      </Form>
     </div>
   );
 };
