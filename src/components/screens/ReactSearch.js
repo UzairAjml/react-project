@@ -38,7 +38,7 @@ const ReactSearch = () => {
   };
 
   return (
-    <div className='container' id='backGround'>
+    <div className='container react-search-colors' id='backGround'>
       <h1 id='heading-react'>React Hooks</h1>
 
       {loading ? (

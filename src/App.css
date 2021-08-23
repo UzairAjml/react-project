@@ -7,8 +7,9 @@
 }
 
 .container-react {
-  background-color: rgb(230, 236, 236);
+  background-color: var(--background-color);
   text-align: left;
+  color: var(--color);
 }
 #heading-react {
   text-align: center;
@@ -68,7 +69,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -80,7 +81,7 @@
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: var(--background-color);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -108,11 +109,6 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.dark {
-  background-color: black;
-  color: white;
-}
-
 .heading-about {
   color: green;
 }
@@ -126,4 +122,23 @@ input:checked + .slider:before {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+}
+
+#acc-status {
+  color: var(--color);
+}
+
+#acc-balance {
+  color: var(--color);
+}
+
+#support-title {
+  color: var(--color);
+}
+
+.react-search-colors {
+  color: var(--color);
+}
+#footer-color {
+  color: var(--color);
 }

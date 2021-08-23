@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux';
+import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { rootReducers } from './reducers/combineReducer';
+import './style/dark.scss';
+import './style/light.scss';
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const enhancer = composeEnhancers();
 
-const store = createStore(rootReducers);
+// other store enhancers if any
+const store = createStore(rootReducers, enhancer);
 
 ReactDOM.render(
   <React.StrictMode>

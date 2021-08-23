@@ -4,7 +4,7 @@ import '../../App.css';
 
 const Footer = () => {
   return (
-    <footer>
+    <footer id='footer-color'>
       <Container id='footer'>
         <Row>
           <Col className='text-center py-3'>Copyright &copy; AllInOne </Col>

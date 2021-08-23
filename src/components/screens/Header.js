@@ -1,22 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { darkMode } from '../../actions/darkMode';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../../App.css';
 
 const Header = () => {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState('light');
 
   const dispatch = useDispatch();
 
   const handleDarkMode = () => {
-    if (!dark) {
-      setDark(true);
+    if (dark === 'light') {
+      setDark('dark');
     } else {
-      setDark(false);
+      setDark('light');
     }
-    dispatch(darkMode(dark));
   };
+
+  useEffect(() => {
+    dispatch(darkMode(dark));
+  }, [dark]);
 
   return (
     <div>
@@ -29,12 +34,20 @@ const Header = () => {
           fixed='top'
         >
           <Container>
-            <Navbar.Brand href='/'>All In One</Navbar.Brand>
+            <Link to='/'>
+              <Navbar.Brand>All In One</Navbar.Brand>
+            </Link>
             <Navbar.Toggle aria-controls='basic-navbar-nav' />
             <Navbar.Collapse id='basic-navbar-nav'>
               <Nav className='me-auto'>
-                <Nav.Link href='/Support'>Customer Support</Nav.Link>
-                <Nav.Link href='/About'>AboutUs</Nav.Link>
+                <Link to='/Support'>
+                  {' '}
+                  <Navbar.Brand>Customer Support</Navbar.Brand>
+                </Link>
+                <Link to='/About'>
+                  {' '}
+                  <Navbar.Brand>AboutUs</Navbar.Brand>
+                </Link>
               </Nav>
               <Nav.Item>
                 <label

@@ -1,4 +1,3 @@
-import './App.css';
 import MainDashboard from './components/screens/MainDashboard';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/screens/Header';
@@ -9,13 +8,21 @@ import Customer from './components/screens/Customer';
 import About from './components/screens/About';
 import Footer from './components/screens/Footer';
 import ErrorPage from './components/screens/ErrorPage';
+import { useEffect } from 'react';
 import { Container } from 'react-bootstrap';
-
+import { useSelector } from 'react-redux';
+import './App.css';
 function App() {
+  const isDark = useSelector((state) => state.mode.isDark);
+
+  useEffect(() => {
+    document.body.classList = '';
+    document.body.classList.add(isDark);
+  }, [isDark]);
   return (
     <div className='App'>
-      <Header />
       <Router>
+        <Header />
         <Container>
           <Switch>
             <Route path='/' component={MainDashboard} exact />

@@ -7,7 +7,7 @@ const Balance = () => {
   console.log(balance);
   return (
     <div>
-      <h1>${balance}</h1>
+      <h1 id='acc-balance'>${balance}</h1>
     </div>
   );
 };
