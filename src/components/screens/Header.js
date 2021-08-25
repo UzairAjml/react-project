@@ -1,27 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { darkMode } from '../../actions/darkMode';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import '../../App.css';
 
 const Header = () => {
-  const [dark, setDark] = useState('light');
+  const isDark = useSelector((state) => state.mode.isDark);
 
   const dispatch = useDispatch();
 
   const handleDarkMode = () => {
-    if (dark === 'light') {
-      setDark('dark');
+    if (isDark === 'light') {
+      window.localStorage.setItem('mode', 'dark');
+      dispatch(darkMode('dark'));
     } else {
-      setDark('light');
+      window.localStorage.setItem('mode', 'light');
+      dispatch(darkMode('light'));
     }
   };
 
   useEffect(() => {
-    dispatch(darkMode(dark));
-  }, [dark]);
+    const mode = window.localStorage.getItem('mode');
+    if (mode) {
+      dispatch(darkMode(mode));
+    }
+  }, []);
 
   return (
     <div>
@@ -54,7 +59,7 @@ const Header = () => {
                   style={{ color: 'white', marginTop: '0.5rem' }}
                   id='label'
                 >
-                  Dark Mode
+                  Toggle Theme
                 </label>
               </Nav.Item>
               <Nav.Item>

@@ -11,6 +11,7 @@ import ErrorPage from './components/screens/ErrorPage';
 import { useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
+import './style/main.scss';
 import './App.css';
 function App() {
   const isDark = useSelector((state) => state.mode.isDark);
@@ -23,7 +24,7 @@ function App() {
     <div className='App'>
       <Router>
         <Header />
-        <Container>
+        <Container style={{ flex: '1 0 auto' }}>
           <Switch>
             <Route path='/' component={MainDashboard} exact />
             <Route path='/Support' component={Customer} />

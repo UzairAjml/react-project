@@ -10,10 +10,14 @@ const Detail = ({ match }) => {
       const res = await fetch(
         `https://fortnite-api.theapinetwork.com/item/get?id=${match.params.id}`
       );
-      console.log(res);
 
       const { data } = await res.json();
-      setItem(data.item);
+
+      if (data.item) {
+        setItem(data.item);
+      } else {
+        throw 'No Such Product Found';
+      }
     } catch (error) {
       setError(error);
     }
@@ -41,6 +45,8 @@ const Detail = ({ match }) => {
       </Link>
       {loader ? (
         <Loader />
+      ) : err ? (
+        <h1 style={{ alignItems: 'center', color: 'red' }}>{err}</h1>
       ) : (
         <div className='detail-card'>
           <Card
@@ -61,9 +67,6 @@ const Detail = ({ match }) => {
               <Card.Title>{item.name}</Card.Title>
             </Card.Body>
           </Card>
-          <h1 style={{ alignItems: 'center', color: 'red' }}>
-            {err && err.message}
-          </h1>
         </div>
       )}
     </div>

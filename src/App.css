@@ -1,3 +1,10 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
 .cards {
   margin-top: 7rem;
 }
@@ -80,7 +87,7 @@
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: var(--background-color);
+  background-color: #1c1e21;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
