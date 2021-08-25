@@ -9,7 +9,7 @@ const MainDashboard = () => {
         <div className='container'>
           <div className='row'>
             <div className='col'>
-              <Card style={{ width: '18rem' }}>
+              <Card style={{ width: '16rem' }}>
                 <Card.Img
                   style={{ height: ' 12rem' }}
                   variant='top'
@@ -29,7 +29,7 @@ const MainDashboard = () => {
             </div>
 
             <div className='col'>
-              <Card style={{ width: '18rem' }}>
+              <Card style={{ width: '16rem' }}>
                 <Card.Img
                   style={{ height: ' 12rem' }}
                   variant='top'
@@ -48,7 +48,7 @@ const MainDashboard = () => {
               </Card>
             </div>
             <div className='col'>
-              <Card style={{ width: '18rem' }}>
+              <Card style={{ width: '16rem' }}>
                 <Card.Img
                   style={{ height: ' 12rem' }}
                   variant='top'
