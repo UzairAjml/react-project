@@ -14,15 +14,18 @@ const Header = () => {
   const handleDarkMode = () => {
     if (isDark === 'light') {
       window.localStorage.setItem('mode', 'dark');
+
       dispatch(darkMode('dark'));
     } else {
       window.localStorage.setItem('mode', 'light');
+
       dispatch(darkMode('light'));
     }
   };
 
   useEffect(() => {
     const mode = window.localStorage.getItem('mode');
+
     if (mode) {
       dispatch(darkMode(mode));
     }
@@ -59,12 +62,16 @@ const Header = () => {
                   style={{ color: 'white', marginTop: '0.5rem' }}
                   id='label'
                 >
-                  Toggle Theme
+                  Dark Mode
                 </label>
               </Nav.Item>
               <Nav.Item>
                 <label className='switch'>
-                  <input type='checkbox' onClick={handleDarkMode} />
+                  <input
+                    type='checkbox'
+                    checked={isDark === 'dark'}
+                    onChange={handleDarkMode}
+                  />
                   <span className='slider round'></span>
                 </label>
               </Nav.Item>
